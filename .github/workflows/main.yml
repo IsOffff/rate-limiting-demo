@@ -1,0 +1,21 @@
+name: Afficher l'heure
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'  
+
+jobs:
+  afficher-heure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du dépôt actuel
+        uses: actions/checkout@v3
+
+      - name: Afficher l'heure actuelle
+        run: |
+          echo "🕒 Il est actuellement :"
+          date
