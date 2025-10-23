@@ -1,0 +1,31 @@
+name: Node.js CI/CD - Rate Limiting Demo
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: |
+          echo " Tests à ajouter ici"
+          # Exemple : npm test
+          # Exemple : npm run lint
+
+      - name: Check build
+        run: node -e "require('./src/index.js'); console.log(' Build OK');"
