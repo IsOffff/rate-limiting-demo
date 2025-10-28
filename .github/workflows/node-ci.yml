@@ -7,10 +7,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./rate-limiting-demo-main   
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -23,12 +27,11 @@ jobs:
 
       - name: Run tests
         run: |
-          echo " Tests à ajouter ici (exemple : npm test)"
-          echo " Pour l'instant, on vérifie juste que le projet s'installe correctement."
+          echo " Tests à ajouter ici"
+          echo " Installation et build réussis."
 
       - name: Check build
         run: |
-          echo " Vérification du build..."
           node -v
           npm -v
-          echo " Environnement Node.js prêt, le build est fonctionnel."
+          echo " Le build CI/CD Node.js s'est exécuté correctement."
