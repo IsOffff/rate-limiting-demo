@@ -4,6 +4,8 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'  
 
 jobs:
   afficher-heure:
@@ -17,3 +19,5 @@ jobs:
         run: |
           echo "🕒 Il est actuellement :"
           date
+
+
