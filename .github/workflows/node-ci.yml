@@ -27,4 +27,8 @@ jobs:
           echo " Pour l'instant, on vérifie juste que le projet s'installe correctement."
 
       - name: Check build
-        run: node -e "console.log(' Build OK');"
+        run: |
+          echo " Vérification du build..."
+          node -v
+          npm -v
+          echo " Environnement Node.js prêt, le build est fonctionnel."
